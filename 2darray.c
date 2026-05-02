@@ -118,3 +118,81 @@ int main()
     return 0;
 }
 
+//3.Factroiral ussing Recurssion
+#include<stdio.h>
+
+long long fact(int n){
+    if(n==0 || n==1){
+        return 1;
+    }
+    else{
+        return n* fact(n-1);
+    }
+}
+int main()
+{
+    int num;
+    long long result;
+    
+    printf("Enter a non negative integer :");
+    scanf("%d",&num);
+
+    if(num<0){
+        printf("Error: Factrorial not defined for negative number\n");
+        return 1;
+    }
+    result=fact(num);
+
+    printf("Factroiral of %d = %lld\n",num,result);
+
+    return 0;
+
+}
+
+//4.Split using function
+#include<stdio.h>
+#include<string.h>
+
+void splitstring(char st[]){
+    int i;
+    
+    for(i=0; st[i] !='\0'; i++){
+        if(st[i]== ' '){
+            printf("\n");
+        }else{
+            printf("%c",st[i]);
+        }
+    }
+}
+int main()
+{
+    char st[100];
+
+    printf("Enter word: ");
+    fgets(st, sizeof(st), stdin);
+
+    printf("\nsplit output: \n");
+    splitstring(st);
+    return 0;
+}
+
+//5.pattern 
+#include<stdio.h>
+int main()
+{
+    int n,raw,col;
+    printf("Enter a number:");
+    scanf("%d",&n);
+
+    for(raw=1; raw<n; raw++){
+        for(col=1; col<n-raw; col++){
+            printf(" ");
+        }
+        for(col=1; col<raw; col++){
+        printf("* ");
+    }
+    printf("\n");
+    }
+
+    return 0;
+}
