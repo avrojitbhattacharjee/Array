@@ -196,3 +196,210 @@ int main()
 
     return 0;
 }
+//string
+#include<stdio.h>
+int main()
+{
+    char st[100];
+    int i;
+
+    printf("Enter A String In Uppercase: ");
+    fgets(st,sizeof(st),stdin);
+
+    //convert upper to lower
+    for(i=0; st[i] !='\0'; i++){
+        if(st[i] >= 'a' && st[i] <='z'){
+            st[i] = st[i] - 32;
+        }
+    }
+    printf("String in lowercase: %s", st);
+
+    return 0;
+}
+
+//7.#include<stdio.h>
+int main()
+{
+    int raws,col;
+    int arr[raws][col];
+
+    printf("Enter Number Of Raws: ");
+    scanf("%d",&raws);
+
+    printf("Enter Number Of coloumn: ");
+    scanf("%d",&col);
+
+    for(int i=0; i<raws; i++){
+        for(int j=0; j<col; j++){
+            printf("Enter element[%d][%d]",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    for(int i=0; i<raws; i++){
+        for(int j=0; j<col; j++){
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+//8.print 1 to n 
+#include<stdio.h>
+void print(int n){
+    if(n==0){
+        return;
+    }
+    print(n-1);
+    printf("%d",n);
+}
+
+int main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+    print(n);
+    printf("\n");
+
+    return 0;
+
+}
+
+//9.String Copy
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char one[]="Avrojit Bh";
+    char two[50];
+
+    strcpy(two,one);
+
+    printf("main: %s",one);
+    printf("destanination: %s",two);
+
+    return 0;
+
+}
+
+//10.String Equality
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[] = "Hello";
+    char str2[] = "Hell";
+    int i, equal = 1;
+
+    for(int i=0; str1[i] !='\0'; i++){
+        if(str1[i] != str2[i]){
+            equal = 0;
+            break;
+        }
+    }
+    if(equal){
+        printf("Srings are equal\n");
+    }else{
+        printf("Strings are not equal\n");
+    }
+    return 0;
+}
+
+//11.square print 
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[] = "Hello";
+    char str2[] = "Hell";
+    int i, equal = 1;
+
+    for(int i=0; str1[i] !='\0'; i++){
+        if(str1[i] != str2[i]){
+            equal = 0;
+            break;
+        }
+    }
+    if(equal){
+        printf("Srings are equal\n");
+    }else{
+        printf("Strings are not equal\n");
+    }
+    return 0;
+}
+
+//12.star
+#include<stdio.h>
+int main()
+{
+    int n,raw,col;
+    printf("Enter a number:");
+    scanf("%d",&n);
+
+    for(raw=1; raw<=n; raw++){
+        for(col=1; col<=n-raw; col++){
+            printf(" ");
+        }
+       for(col=1; col<=raw; col++){
+        printf(" *");
+       }
+       printf("\n");
+        
+    }
+    return 0;
+}
+
+//13.#include<stdio.h>
+int main()
+{
+    int n,raw,col;
+    printf("Enter a number:");
+    scanf("%d",&n);
+
+    for(raw=1; raw<=n; raw++){
+        for(col=1; col<=n-raw; col++){
+            printf(" ");
+        }
+       for(col=1; col<=2*raw-1; col++){
+        printf("*");
+       }
+       printf("\n");
+        
+    }
+    return 0;
+}
+
+//14.Diamond print
+
+#include<stdio.h>
+int main()
+{
+    int n,raw,col;
+    printf("Enter a number:");
+    scanf("%d",&n);
+
+    for(raw=1; raw<=n; raw++){
+        for(col=1; col<=n-raw; col++){
+            printf(" ");
+        }
+       for(col=1; col<=raw; col++){
+        printf("* ");
+       }
+       printf("\n");
+        
+    }
+
+    for(raw=n; raw>=1; raw--){
+        for(col=1; col<=n-raw; col++){
+            printf(" ");
+        }
+       for(col=1; col<=raw; col++){
+        printf("* ");
+       }
+       printf("\n");
+       }
+    return 0;
+}
